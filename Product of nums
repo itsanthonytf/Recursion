@@ -1,0 +1,10 @@
+def find_product(arr):
+    if len(arr) == 1:
+        return arr[0]
+    else:
+        return arr[0] * find_product(arr[1:])
+
+# Example Usage
+arr = [1, 2, 3, 4, 5]
+result = find_product(arr)
+print("Product of the array:", result)
