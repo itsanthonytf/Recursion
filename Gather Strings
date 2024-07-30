@@ -1,0 +1,25 @@
+def find_strings(obj):
+    strings = []
+    for key in obj:
+        if isinstance(obj[key], str):
+            strings.append(obj[key])
+        elif isinstance(obj[key], dict):
+            strings.extend(find_strings(obj[key]))
+    return strings
+
+# Example Object
+obj = {
+    'key1': 'value1',
+    'key2': {
+        'key3': 'value2',
+        'key4': {
+            'key5': 'value3'
+        },
+        'key6': 123
+    },
+    'key7': 456
+}
+
+# Find all strings in the object
+result = find_strings(obj)
+print(result)
